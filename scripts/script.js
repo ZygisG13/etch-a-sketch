@@ -21,9 +21,9 @@ function changeColor() {
   );
 }
 
-const button = document.querySelector("#btn");
+const squaresButton = document.querySelector("#squaresButton");
 //This handler will be executed once the button press. Shows prompt
-button.addEventListener("click", () => {
+squaresButton.addEventListener("click", () => {
   let squaresNumber = prompt("Enter the number of squares, max. 100");
   if (squaresNumber > 100) {
     window.alert("Too large number of squares");
@@ -33,3 +33,13 @@ button.addEventListener("click", () => {
   changeColor();
 });
 
+const gridButton = document.querySelector("#gridButton");
+//This handler catches Grid button and set grind on squares
+gridButton.addEventListener("click", (event) => {
+  // put borders on divs, using forEach function
+  const squares = document.querySelectorAll(".content")
+  console.log(squares.forEach)
+  squares.forEach((square) => {
+    square.style.border = `1px solid black ${event.target.value}`;
+  })
+});
