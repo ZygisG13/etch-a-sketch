@@ -2,13 +2,27 @@ function squaresFormation(squaresNumber) {
   for (let index = 0; index < squaresNumber; index++) {
     const container = document.querySelector("#container");
     const content = document.createElement("div");
-    content.classList.add(index);
+    content.classList.add("content");
     container.appendChild(content);
   }
 }
 
-const button = document.querySelector("#btn");
+function changeColor() {
+  const changeColor = document.querySelector("#container");
+  // This handler will be executed only once when the cursor
+  // moves over the unordered list
+  changeColor.addEventListener(
+    "mouseover",
+    (event) => {
+      // highlight the mouseenter target
+      event.target.style.background = "black";
+    },
+    false
+  );
+}
 
+const button = document.querySelector("#btn");
+//This handler will be executed once the button press. Shows prompt
 button.addEventListener("click", () => {
   let squaresNumber = prompt("Enter the number of squares, max. 100");
   if (squaresNumber > 100) {
@@ -16,4 +30,6 @@ button.addEventListener("click", () => {
   } else {
     squaresFormation(squaresNumber);
   }
+  changeColor();
 });
+
