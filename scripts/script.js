@@ -49,6 +49,6 @@ gridButton.addEventListener("click", (event) => {
   // put borders on div's, using forEach function
   const squares = document.querySelectorAll(".content")
   squares.forEach((square) => {
-    square.style.border = `1px solid black ${event.target.value}`;
+    square.style.border = `0.5px groove ${event.target.value}`;
   })
 });
