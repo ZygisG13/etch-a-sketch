@@ -17,7 +17,7 @@ function squaresOnGrid(squaresNumber) {
   squaresAreaFormation.style.gridTemplateRows = `repeat(${squaresNumber}, auto)`;
 }
 
-function changeColor() {
+function changeToBlack() {
   const changeColor = document.querySelector("#container");
   // This handler will be executed only once when the cursor
   // moves over the unordered list
@@ -31,6 +31,26 @@ function changeColor() {
   );
 }
 
+function changeColor() {
+  const changeColor = document.querySelector("#container");
+  // This handler will be executed only once when the cursor
+  // moves over the unordered list
+  changeColor.addEventListener(
+    "mouseover",
+    (event) => {
+      // highlight the mouseover target and call 
+      event.target.style.background = `${randomRgba()}`;
+    },
+    false
+  );
+}
+
+//This function return random rgb color
+function randomRgba() {
+  let o = Math.round, r = Math.random, s = 255;
+  return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
 const squaresButton = document.querySelector("#squaresButton");
 //This handler will be executed once the button press. Shows prompt
 squaresButton.addEventListener("click", () => {
@@ -40,7 +60,8 @@ squaresButton.addEventListener("click", () => {
   } else {
     squaresFormation(squaresNumber);
   }
-  changeColor();
+  //Call changeToBlack function
+  changeToBlack();
 });
 
 const gridButton = document.querySelector("#gridButton");
@@ -51,4 +72,11 @@ gridButton.addEventListener("click", (event) => {
   squares.forEach((square) => {
     square.style.border = `0.5px groove ${event.target.value}`;
   })
+});
+
+const rgbColor = document.querySelector("#colorButton");
+//This handler catches Random RGB Color button and set grind on squares
+rgbColor.addEventListener("click", (event) => {
+  //called function
+  changeColor();
 });
