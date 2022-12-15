@@ -1,3 +1,4 @@
+//This function creates double div's in DOM. Div's number is entered by user
 function squaresFormation(squaresNumber) {
   for (let index = 0; index < squaresNumber * squaresNumber; index++) {
     const container = document.querySelector("#container");
@@ -5,6 +6,15 @@ function squaresFormation(squaresNumber) {
     content.classList.add("content");
     container.appendChild(content);
   }
+  squaresOnGrid(squaresNumber);
+}
+
+//This function controls how many cells should be in columns, and rows.
+function squaresOnGrid(squaresNumber) {
+  const squaresAreaFormation = document.querySelector("#container");
+  //change #container style in css - DOM
+  squaresAreaFormation.style.gridTemplateColumns = `repeat(${squaresNumber}, auto)`;
+  squaresAreaFormation.style.gridTemplateRows = `repeat(${squaresNumber}, auto)`;
 }
 
 function changeColor() {
@@ -38,7 +48,6 @@ const gridButton = document.querySelector("#gridButton");
 gridButton.addEventListener("click", (event) => {
   // put borders on div's, using forEach function
   const squares = document.querySelectorAll(".content")
-  console.log(squares.forEach)
   squares.forEach((square) => {
     square.style.border = `1px solid black ${event.target.value}`;
   })
