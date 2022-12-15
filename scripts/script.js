@@ -1,5 +1,5 @@
 function squaresFormation(squaresNumber) {
-  for (let index = 0; index < squaresNumber; index++) {
+  for (let index = 0; index < squaresNumber * squaresNumber; index++) {
     const container = document.querySelector("#container");
     const content = document.createElement("div");
     content.classList.add("content");
@@ -36,7 +36,7 @@ squaresButton.addEventListener("click", () => {
 const gridButton = document.querySelector("#gridButton");
 //This handler catches Grid button and set grind on squares
 gridButton.addEventListener("click", (event) => {
-  // put borders on divs, using forEach function
+  // put borders on div's, using forEach function
   const squares = document.querySelectorAll(".content")
   console.log(squares.forEach)
   squares.forEach((square) => {
