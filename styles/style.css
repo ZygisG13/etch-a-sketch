@@ -1,26 +1,40 @@
+#headline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  font-size: larger;
+ }
+ 
+ 
+#body {
+   display: flex;
+   flex-direction: row;
+ }
+
 #container {
-  display: grid;
-  grid: repeat(2, 60px) / auto-flow 80px;
-  width: 960px;
-  height: auto;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."; 
+  width: 300px;
+  height: 300px; 
 }
 
 
 /*.content{
-  border: 1px solid black;
-}
-*/
+}*/
 
-#headline {
- display: flex;
- justify-content: center;
- align-items: center;
- margin: 16px;
- font-size: larger;
-}
 
-#body {
-  display: flex;
-  flex: 1;
-  justify-content: space-around;
-}
+
