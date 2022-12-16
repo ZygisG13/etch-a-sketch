@@ -48,7 +48,7 @@ function changeColor() {
 }
 
 //This function clear all css styles and squares by removing first child from container
-function clearContent() {
+function clearSquares() {
   const parent = document.querySelector("#container");
   //This loop checks if child <div> exist, then remove
   while (parent.firstChild) {
@@ -103,5 +103,5 @@ const clear = document.querySelector("#clearButton");
 //This handler catches Clear button
 clear.addEventListener("click", (event) => {
   //called function
-  clearContent();
+  clearSquares();
 });
