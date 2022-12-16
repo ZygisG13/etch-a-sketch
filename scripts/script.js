@@ -64,8 +64,6 @@ squaresButton.addEventListener("click", () => {
   } else {
     squaresFormation(squaresNumber);
   }
-  //Call changeToBlack function
-  changeToBlack();
 });
 
 const gridButton = document.querySelector("#gridButton");
@@ -83,4 +81,11 @@ const rgbColor = document.querySelector("#colorButton");
 rgbColor.addEventListener("click", (event) => {
   //called function
   changeColor();
+});
+
+const blackColor = document.querySelector("#blackColorButton");
+//This handler catches Random RGB Color button and set grind on squares
+blackColor.addEventListener("click", (event) => {
+  //called function
+  changeToBlack();
 });

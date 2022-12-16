@@ -1,5 +1,6 @@
 body {
   background-color: bisque;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #headline {
@@ -8,6 +9,7 @@ body {
   align-items: center;
   margin: 16px;
   font-size: xx-large;
+  height: 100px;
  }
  
  
@@ -24,8 +26,8 @@ body {
   background-color: aliceblue;
   display: grid;
   gap: 0px 0px; 
-  width: 500px;
-  height: 500px; 
+  width: 400px;
+  height: 400px; 
 }
 
 .buttons {
@@ -37,6 +39,7 @@ body {
 button {
   background-color: #4CAF50; /* Green */
   border: none;
+  border-radius: 3%;
   color: white;
   padding: 15px 32px;
   text-align: center;
