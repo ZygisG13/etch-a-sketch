@@ -47,6 +47,15 @@ function changeColor() {
   );
 }
 
+//This function clear all css styles and squares by removing first child from container
+function clearContent() {
+  const parent = document.querySelector("#container");
+  //This loop checks if child <div> exist, then remove
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+}
+}
+
 //This function return random rgba color
 function randomRgba() {
   let o = Math.round,
@@ -67,7 +76,7 @@ squaresButton.addEventListener("click", () => {
 });
 
 const gridButton = document.querySelector("#gridButton");
-//This handler catches Grid button and set grind on squares
+//This handler catches Grid button and set grid on squares
 gridButton.addEventListener("click", (event) => {
   // put borders on div's, using forEach function
   const squares = document.querySelectorAll(".content");
@@ -77,15 +86,22 @@ gridButton.addEventListener("click", (event) => {
 });
 
 const rgbColor = document.querySelector("#colorButton");
-//This handler catches Random RGB Color button and set grind on squares
+//This handler catches Random RGB Color button
 rgbColor.addEventListener("click", (event) => {
   //called function
   changeColor();
 });
 
 const blackColor = document.querySelector("#blackColorButton");
-//This handler catches Random RGB Color button and set grind on squares
+//This handler catches Black Color button
 blackColor.addEventListener("click", (event) => {
   //called function
   changeToBlack();
+});
+
+const clear = document.querySelector("#clearButton");
+//This handler catches Clear button
+clear.addEventListener("click", (event) => {
+  //called function
+  clearContent();
 });
