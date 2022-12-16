@@ -53,7 +53,8 @@ function clearSquares() {
   //This loop checks if child <div> exist, then remove
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
-}
+  }
+  document.querySelector("#container").style.backgroundColor = "aliceblue";
 }
 
 //This function return random rgba color
